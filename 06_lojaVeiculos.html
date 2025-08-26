@@ -13,35 +13,106 @@
     */
 
   //ENTRADA
-  alert("Insira três veículos separadamente para adicionar a lista");
 
-  const addCarro1 = prompt("Qual o PRIMEIRO veículo que deseja inserir a lista");
-  const addCarro2 = prompt("Qual o SEGUNDO veículo que deseja inserir a lista?");
-  const addCarro3 = prompt("Qual o TERCEIRO veículo que deseja inserir a lista");
+  const addCarro1 = prompt(
+    "Qual o PRIMEIRO veículo que deseja inserir a lista"
+  );
+  const tipo1 = prompt(
+    "Qual tipo de veículo deseja inserir na lista?(S-SUV ou SE-Sedan ou H-Hatch"
+  )
+    .toUpperCase()
+    .trim();
 
-  const tipo = prompt("Qual tipo de veículo deseja inserir na lista?(S-SUV ou SE-Sedan ou H-Hatch").toUpperCase().trim();
+  const addCarro2 = prompt(
+    "Qual o SEGUNDO veículo que deseja inserir a lista?"
+  );
+  const tipo2 = prompt(
+    "Qual tipo de veículo deseja inserir na lista?(S-SUV ou SE-Sedan ou H-Hatch"
+  )
+    .toUpperCase()
+    .trim();
+
+  const addCarro3 = prompt(
+    "Qual o TERCEIRO veículo que deseja inserir a lista"
+  );
+  const tipo3 = prompt(
+    "Qual tipo de veículo deseja inserir na lista?(S-SUV ou SE-Sedan ou H-Hatch"
+  )
+    .toUpperCase()
+    .trim();
 
   //PROCESSAMENTO
   let carrosSUV = ["Tiggo", "Sportage", "Tucson", "EcoSport"];
-  let cassosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
+  let carrosSedan = ["Civic", "Corolla", "Arizzo", "Fusion"];
   let carrosHatch = ["308", "Focus", "i30"];
 
-  if(tipo == "S"){
-    carrosSUV.push(addCarro1)
-    carrosSUV.push(addCarro2)
-    carrosSUV.push(addCarro3)
-  }
-  else if(tipo == "SE"){
-    cassosSedan.push(addCarro1)
-    cassosSedan.push(addCarro2)
-    cassosSedan.push(addCarro3)
-  }
-  else if(tipo == "H"){
-    carrosHatch.push(addCarro1)
-    carrosHatch.push(addCarro2)
-    carrosHatch.push(addCarro3)
+  switch (tipo1) {
+    case "S":
+      carrosSUV.push(addCarro1);
+
+      break;
+
+    case "SE":
+      carrosSedan.push(addCarro1);
+
+      break;
+
+    case  "H":
+      carrosHatch.push(addCarro1);
+
+      break;
+
+    default:
+      alert("ERRO")
+      break;
   }
 
+  switch (tipo2) {
+    case "S":
+      carrosSUV.push(addCarro2);
+
+      break;
+
+    case "SE":
+      carrosSedan.push(addCarro2);
+
+      break;
+
+    case  "H":
+      carrosHatch.push(addCarro2);
+
+      break;
+
+    default:
+      alert("ERRO")
+      break;
+  }
+
+  switch (tipo3) {
+    case "S":
+      carrosSUV.push(addCarro3);
+
+      break;
+
+    case "SE":
+      carrosSedan.push(addCarro3);
+
+      break;
+
+    case  "H":
+      carrosHatch.push(addCarro3);
+
+      break;
+
+    default:
+      alert("ERRO")
+      break;
+  }
+
+
+
   //SAÍDA
-  document.write(`<p>Lista SUV: ${carrosSUV}.</p><p>Lista Sedan: ${cassosSedan}</p>Lista Hatch: ${carrosHatch}.`)
+  document.write(
+    `<p>Lista SUV: ${carrosSUV}.</p><p>Lista Sedan: ${carrosSedan}</p>Lista Hatch: ${carrosHatch}.`
+  );
 </script>
